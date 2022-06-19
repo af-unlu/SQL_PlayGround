@@ -1,5 +1,3 @@
-
---Odev 1
 --@block 
 --film tablosunda bulunan title ve description sütunlarındaki verileri sıralayınız.
 SELECT film.title, film.description 
@@ -30,7 +28,3 @@ WHERE customer.first_name ='Mary';
 SELECT * 
 FROM film
 WHERE film.length<=50 AND NOT(film.rental_rate=2.99 OR film.rental_rate=4.99);
-
---Odev 1
-
---Odev 2
