@@ -25,3 +25,8 @@ FROM city
 GROUP BY country_id
 ORDER BY COUNT(*) DESC
 LIMIT 1;
+
+
+--@block
+SELECT first_name AS name
+FROM customer;
