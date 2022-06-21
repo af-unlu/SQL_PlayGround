@@ -32,14 +32,9 @@ AND replacement_cost = (
 
 --@block
 --payment tablosunda en fazla sayıda alışveriş yapan müşterileri(customer) sıralayınız.
-SELECT *
-FROM customer
-WHERE customer.customer_id IN (
-    SELECT payment.customer_id
-    FROM payment
-    WHERE amount = (
-        SELECT MAX(amount)
-        FROM payment
-    )
-)
 
+SELECT SUM(amount),customer.first_name,customer.last_name
+FROM payment
+JOIN customer ON customer.customer_id=payment.customer_id
+GROUP BY payment.customer_id, customer.first_name,customer.last_name
+ORDER BY SUM(amount) DESC;
